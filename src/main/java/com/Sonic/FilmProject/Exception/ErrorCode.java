@@ -5,7 +5,8 @@ public enum ErrorCode {
     FILMNOTFOUND(2000, "Không tìm thấy phim"),
     FILMEXISTS(2001, "Phim đã tồn tại"),
     EPISODEFILMEXSTED(2002, "Tập phim này đã tồn tại"),
-    EPISODEFILMNOTFOUND(2003, "Không thể tìm thấy tập phim này")
+    EPISODEFILMNOTFOUND(2003, "Không thể tìm thấy tập phim này"),
+    LINKEPISODENOTFOUND(2004, "Không tìm thấy link phim này")
     ;
     ErrorCode(int code, String message) {
         this.code = code;

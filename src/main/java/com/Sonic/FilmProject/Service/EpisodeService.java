@@ -46,5 +46,8 @@ public class EpisodeService {
         episodeMapper.toEpisode(request);
         return episodeRepository.save(episode);
     }
-
+    public void deleteEpisode(String episodeId) {
+        Episode episode = episodeRepository.findById(episodeId).orElseThrow(() -> new AppException(ErrorCode.EPISODEFILMNOTFOUND));
+        episodeRepository.delete(episode);
+    }
 }

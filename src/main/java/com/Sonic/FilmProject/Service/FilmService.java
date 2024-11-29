@@ -7,11 +7,10 @@ import com.Sonic.FilmProject.Exception.ErrorCode;
 import com.Sonic.FilmProject.Mapper.FilmMapper;
 import com.Sonic.FilmProject.Repository.FilmRepository;
 import com.Sonic.FilmProject.dto.Request.FilmRequest;
-import com.Sonic.FilmProject.dto.Response.FilmResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+
 
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class FilmService {
     }
 
     public List<Film> getAllFilms() {
-        return filmRepository.findAll();
+        return filmRepository.findAll(Sort.by(Sort.Direction.DESC, "timeModified"));
     }
 
     public Film getFilmById(String id) {

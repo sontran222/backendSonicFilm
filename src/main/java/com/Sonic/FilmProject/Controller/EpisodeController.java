@@ -40,11 +40,22 @@ public class EpisodeController {
         return apiResponse;
     }
 
-    @PutMapping("/api/episodes/{Episodeid}")
+    @PutMapping("/api/episodes/update/{Episodeid}")
     public ApiResponse<EpisodeResponse> updateEpisode(@RequestBody EpisodeRequest request, @PathVariable String Episodeid){
         ApiResponse<EpisodeResponse> apiResponse = new ApiResponse<>();
         apiResponse.setCode(1000);
         apiResponse.setResult(episodeMapper.toEpisodeResponse(episodeService.updateEpisode(request,Episodeid)));
         return apiResponse;
     }
+
+    @DeleteMapping("/api/episodes/delete/{Episodeid}")
+    public ApiResponse deleteEpisode(@PathVariable String Episodeid){
+        ApiResponse apiResponse = new ApiResponse<>();
+        episodeService.deleteEpisode(Episodeid);
+        apiResponse.setCode(1000);
+        apiResponse.setMessage("Đã xóa tập thành công");
+        return apiResponse;
+    }
+
+
 }

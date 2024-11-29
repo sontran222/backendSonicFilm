@@ -10,14 +10,14 @@ public class SlugUtils {
         // Chuyển thành chữ thường
         String lowerCase = input.toLowerCase();
 
-        // Chuyển các ký tự có dấu thành không dấu
+        // Chuyển ký tự có dấu thành không dấu
         String removeAccents = Normalizer.normalize(lowerCase, Normalizer.Form.NFD);
         removeAccents = removeAccents.replaceAll("[^\\p{ASCII}]", "");
 
-        // Thay thế khoảng trắng bằng dấu gạch ngang
+        // Thay khoảng trắng bằng dấu gạch ngang
         String slug = removeAccents.replaceAll("\\s+", "-");
 
-        // Xóa các ký tự đặc biệt không hợp lệ
+        // Xóa các ký tự đặc biệt
         slug = slug.replaceAll("[^a-z0-9-]", "");
 
         // Đảm bảo slug không bắt đầu hay kết thúc bằng dấu gạch ngang
