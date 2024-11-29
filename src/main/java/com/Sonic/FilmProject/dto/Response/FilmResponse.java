@@ -1,6 +1,7 @@
 package com.Sonic.FilmProject.dto.Response;
 
 
+import java.time.LocalDateTime;
 
 public class FilmResponse {
     private String id;
@@ -13,7 +14,8 @@ public class FilmResponse {
     private boolean chieurap;
     private String trailer;
     private String type;
-
+    private LocalDateTime timeModified;
+    private String genreSlug;
     public String getId() {
         return id;
     }
@@ -93,4 +95,21 @@ public class FilmResponse {
     public void setType(String type) {
         this.type = type;
     }
+
+    public LocalDateTime getTimeModified() {
+        return timeModified;
+    }
+
+    public void setTimeModified(LocalDateTime timeModified) {
+        this.timeModified = timeModified;
+    }
+
+    public String getGenreSlug() {
+        return genreSlug;
+    }
+
+    public void setGenreSlug(String genreSlug) {
+        this.genreSlug = genreSlug;
+    }
+
 }

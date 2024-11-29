@@ -3,6 +3,8 @@ package com.Sonic.FilmProject.Entity;
 import com.Sonic.FilmProject.DefineSomethings.SlugUtils;
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 public class Film {
     @Id
@@ -18,6 +20,8 @@ public class Film {
     private boolean chieurap;
     private String trailer;
     private String type;
+    private LocalDateTime timeModified;
+    private String genreSlug;
 
     public String getId() {
         return id;
@@ -99,8 +103,30 @@ public class Film {
         this.type = type;
     }
 
+    public LocalDateTime getTimeModified() {
+        return timeModified;
+    }
+
+    public void setTimeModified(LocalDateTime timeModified) {
+        this.timeModified = timeModified;
+    }
+
+    public String getGenreSlug() {
+        return genreSlug;
+    }
+
+    public void setGenreSlug(String genreSlug) {
+        this.genreSlug = genreSlug;
+    }
+
     @PrePersist
     public void generateSlug(){
         this.slug = SlugUtils.toSlug(this.name);
+        this.timeModified = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void updateModifiedTime(){
+        this.timeModified = LocalDateTime.now();
     }
 }

@@ -1,5 +1,7 @@
 package com.Sonic.FilmProject.dto.Request;
 
+import java.time.LocalDateTime;
+
 public class FilmRequest {
     private String name;
     private String slug;
@@ -10,6 +12,8 @@ public class FilmRequest {
     private boolean chieurap;
     private String trailer;
     private String type;
+    private LocalDateTime timeModified;
+    private String genreSlug;
 
     public String getName() {
         return name;
@@ -26,6 +30,8 @@ public class FilmRequest {
     public void setSlug(String slug) {
         this.slug = slug;
     }
+
+
 
     public String getOriginName() {
         return originName;
@@ -82,4 +88,22 @@ public class FilmRequest {
     public void setType(String type) {
         this.type = type;
     }
+
+    public LocalDateTime getTimeModified() {
+        return timeModified;
+    }
+
+    public void setTimeModified(LocalDateTime timeModified) {
+        this.timeModified = timeModified;
+    }
+
+
+    public String getGenreSlug() {
+        return genreSlug;
+    }
+
+    public void setGenreSlug(String genreSlug) {
+        this.genreSlug = genreSlug;
+    }
+
 }
