@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StatusRepository extends JpaRepository<Status, String>{
+    boolean existBySlug(String slug);
+    boolean existBySlugAndIdNot(String slug, String id);
 }

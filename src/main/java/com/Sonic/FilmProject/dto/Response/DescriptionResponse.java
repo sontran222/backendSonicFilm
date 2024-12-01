@@ -4,6 +4,7 @@ public class DescriptionResponse {
     private String id;
     private String slug;
     private String content;
+    private String language;
 
     public String getId() {
         return id;
@@ -27,5 +28,13 @@ public class DescriptionResponse {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }
