@@ -17,7 +17,6 @@ public class FilmController {
     private FilmService filmService;
     @Autowired
     private FilmMapper filmMapper;
-
     //api up phim
     @PostMapping("/api/films")
     public ApiResponse<FilmResponse> createFilm(@RequestBody FilmRequest request) {
